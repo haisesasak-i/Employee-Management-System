@@ -9,8 +9,13 @@ public abstract class Employee {
         this.department = department;
     }
     public abstract double calculateSalary();
-    public String getDetails() {
+    @Override
+    public String toString() {
         return "Employee: " + this.name + "has id"
-            + "\"" + this.id + "and works in " + this.department + "department";
+            + "\"" + this.id + "and has been working in " + this.department +
+            "department";
     }
+    public String getName() { return this.name; }
+    public String getId() { return this.id; }
+    public String getDepartment() { return this.department; }
 }
