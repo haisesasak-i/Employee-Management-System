@@ -5,7 +5,7 @@ public class FullTimeEmployee extends Employee {
                             int monthsWorked, double baseSalary) {
         super(name, id, department);
         this.baseSalary = baseSalary;
-        if (monthsWorked <= 0 || monthsWorked > 12) {
+        if (monthsWorked < 0 || monthsWorked > 12) {
             monthsWorked = 0;
         }
         this.monthsWorked = monthsWorked;
