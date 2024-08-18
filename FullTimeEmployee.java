@@ -18,6 +18,6 @@ public class FullTimeEmployee extends Employee {
     @Override
     public String toString() {
         return super.toString() + "for " + this.monthsWorked +
-            " months with base Salary of Rs." + this.baseSalary + ".";
+            " months with base Salary of $" + this.baseSalary + ".";
     }
 }

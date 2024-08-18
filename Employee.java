@@ -11,9 +11,9 @@ public abstract class Employee {
     public abstract double calculateSalary();
     @Override
     public String toString() {
-        return "Employee: " + this.name + "has id"
-            + "\"" + this.id + "and has been working in " + this.department +
-            "department";
+        return "Employee: " + this.name + " has id "
+            + "\"" + this.id + "\" and has been working in " + this.department +
+            " department ";
     }
     public String getName() { return this.name; }
     public String getId() { return this.id; }
