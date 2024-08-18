@@ -1,9 +1,9 @@
 public abstract class Employee {
     private String name;
-    private String id;
+    private int id;
     private String department;
 
-    public Employee(String name, String id, String department) {
+    public Employee(String name, int id, String department) {
         this.name = name;
         this.id = id;
         this.department = department;
@@ -16,6 +16,6 @@ public abstract class Employee {
             " department ";
     }
     public String getName() { return this.name; }
-    public String getId() { return this.id; }
+    public int getId() { return this.id; }
     public String getDepartment() { return this.department; }
 }

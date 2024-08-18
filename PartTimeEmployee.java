@@ -1,7 +1,7 @@
 public class PartTimeEmployee extends Employee {
     private double hourlyRate;
     private int hoursWorked;
-    public PartTimeEmployee(String name, String id, String department,
+    public PartTimeEmployee(String name, int id, String department,
                             double hourlyRate, int hoursWorked) {
         super(name, id, department);
         this.hourlyRate = hourlyRate;

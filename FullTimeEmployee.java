@@ -1,7 +1,7 @@
 public class FullTimeEmployee extends Employee {
     private int monthsWorked;
     private double baseSalary;
-    public FullTimeEmployee(String name, String id, String department,
+    public FullTimeEmployee(String name, int id, String department,
                             int monthsWorked, double baseSalary) {
         super(name, id, department);
         this.baseSalary = baseSalary;
