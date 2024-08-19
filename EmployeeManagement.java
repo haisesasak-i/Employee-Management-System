@@ -17,22 +17,22 @@ public class EmployeeManagement {
             System.out.println(currentEmployee);
         }
     }
-    public void removeAnEmployee(Employee employee) {
-        if (!this.employeeIdTOEmployeeMap.containsKey(employee.getId())) {
+    public void removeAnEmployee(int id) {
+        if (!this.employeeIdTOEmployeeMap.containsKey(id)) {
             System.out.println(
                 "The given id cannot be found in employee list.");
             return;
         }
-        this.employeeIdTOEmployeeMap.remove(employee.getId());
-        System.out.println("The employee " + employee.getName() +
+        this.employeeIdTOEmployeeMap.remove(id);
+        System.out.println("The employee with id " + id +
                            " is removed successfully!");
     }
-    public void displayDetailsById(Employee employee) {
-        if (!this.employeeIdTOEmployeeMap.containsKey(employee.getId())) {
+    public void displayDetailsById(int id) {
+        if (!this.employeeIdTOEmployeeMap.containsKey(id)) {
             System.out.println(
                 "The given id cannot be found in employee list.");
             return;
         }
-        System.out.println(this.employeeIdTOEmployeeMap.get(employee.getId()));
+        System.out.println(this.employeeIdTOEmployeeMap.get(id));
     }
 }
