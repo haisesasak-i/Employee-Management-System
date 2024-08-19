@@ -9,27 +9,36 @@ public class UserInterface {
     public void start() {
         int choice;
         while (true) {
-            System.out.println(
-                "<------------------------- Employee Manager ----------------------->");
+            while (true) {
+                System.out.println(
+                    "<------------------------- Employee Manager ----------------------->");
 
+                System.out.println("");
+                System.out.println(
+                    "What would you like to do?\nEnter \"1\" to add a Full-Time or Part-Time employee.\nEnter \"2\" to view details of an employee using Id.\nEnter \"3\" to remove an employee.\nEnter \"4\" to view all employee.\nEnter \"5\" to quit.");
+                choice = Integer.valueOf(this.scanner.nextLine());
+                if (choice > 0 && choice <= 5) {
+                    break;
+                }
+            }
+            if (choice == 1) {
+
+            } else if (choice == 2) {
+                this.displayingDetailsOfEmployeeUsingId();
+            } else if (choice == 3) {
+                this.removeAnEmployeeUsingId();
+            } else if (choice == 4) {
+                displayAllEmployee();
+            } else
+                return;
             System.out.println("");
             System.out.println(
-                "What would you like to do?\nEnter \"1\" to add a Full-Time or Part-Time employee.\nEnter \"2\" to view details of an employee using Id.\nEnter \"3\" to remove an employee.\nEnter \"4\" to view all employee.\nEnter \"5\" to quit.");
-            choice = Integer.valueOf(this.scanner.nextLine());
-            if (choice > 0 && choice <= 5) {
+                "Would you like to continue using our employee Manager:\n\nEnter any variation of \"true\" like \"True or TrUe\" to continue using our employee manager.\nAnything other than variation of \"true\" will be considered \"false\".");
+            boolean userChoice = Boolean.valueOf(scanner.nextLine());
+            if (!userChoice) {
                 break;
             }
         }
-        if (choice == 1) {
-
-        } else if (choice == 2) {
-            this.displayingDetailsOfEmployeeUsingId();
-        } else if (choice == 3) {
-            this.removeAnEmployeeUsingId();
-        } else if (choice == 4) {
-            displayAllEmployee();
-        } else
-            return;
     }
     private void displayAllEmployee() { this.management.displayAllEmployee(); }
     private void removeAnEmployeeUsingId() {
@@ -41,6 +50,7 @@ public class UserInterface {
         this.management.displayDetailsById(id);
     }
     private int gettingIdOfUser() {
+        System.out.println("");
         System.out.println("Enter the id of employee to remove:");
         int id = Integer.valueOf(scanner.nextLine());
         return id;
