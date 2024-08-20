@@ -5,9 +5,7 @@ public class PartTimeEmployee extends Employee {
                             double hourlyRate, int hoursWorked) {
         super(name, id, department);
         this.hourlyRate = hourlyRate;
-        if (hoursWorked < 0 || hoursWorked > 24) {
-            hoursWorked = 0;
-        }
+
         this.hoursWorked = hoursWorked;
     }
     @Override
