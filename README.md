@@ -40,10 +40,3 @@ This Java project is an Employee Management System that allows you to manage emp
 ### Prerequisites
 
 - **Java Development Kit (JDK)** installed on your machine.
-
-### Running the Project
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/employee-management-system.git
-   ```
