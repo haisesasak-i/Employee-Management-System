@@ -15,15 +15,16 @@ public class UserInterface {
 
                 System.out.println("");
                 System.out.println(
-                    "What would you like to do?\nEnter \"1\" to add a Full-Time or Part-Time employee.\nEnter \"2\" to view details of an employee using Id.\nEnter \"3\" to remove an employee.\nEnter \"4\" to view all employee.\nEnter \"5\" to quit.");
+                    "What would you like to do?\nEnter \"1\" to add a Full-Time or Part-Time employee.\nEnter \"2\" to view details of an employee using Id.\nEnter \"3\" to remove an employee.\nEnter \"4\" to view all employee.\nEnter \"5\" to calculate salary of an employee.\nEnter \"6\" to quit.");
                 choice = Integer.valueOf(this.scanner.nextLine());
-                if (choice > 0 && choice <= 5) {
+                if (choice > 0 && choice <= 6) {
                     break;
                 }
                 System.out.println(" ");
                 System.out.println(
-                    "You have entered an invalid number\nRemember the number must be from 1 till 5.");
+                    "You have entered an invalid number\nRemember the number must be from 1 till 6.");
             }
+            System.out.println(" ");
             if (choice == 1) {
                 this.addingAFullTimeOrPartTimeEmployee();
             } else if (choice == 2) {
@@ -32,6 +33,9 @@ public class UserInterface {
                 this.removeAnEmployeeUsingId();
             } else if (choice == 4) {
                 displayAllEmployee();
+            } else if (choice == 5) {
+
+                this.calculateSalary();
             } else {
                 System.out.println(" ");
                 System.out.println(
@@ -80,14 +84,21 @@ public class UserInterface {
         this.management.addAnEmployee(employee);
     }
     private Employee creationOfFullTimeEmployee() {
-
+        int id;
         int monthsWorked;
         double baseSalary;
-        System.out.println(" ");
+
         System.out.println("Enter the name of employee:");
         String name = this.scanner.nextLine();
-        System.out.println("Enter the id of employee:");
-        int id = Integer.valueOf(scanner.nextLine());
+        while (true) {
+            System.out.println("Enter the id of employee:");
+            id = Integer.valueOf(scanner.nextLine());
+            if (id > 0) {
+                break;
+            }
+            System.out.println(" ");
+            System.out.println("id can never be negative\n Try Again!");
+        }
 
         System.out.println("Enter the department of employee:");
         String department = this.scanner.nextLine();
@@ -121,17 +132,26 @@ public class UserInterface {
     }
     private Employee creationOfPartTimeEmployee() {
         int hours;
+        int id;
         double hourlyRate;
         System.out.println(" ");
         System.out.println("Enter the name of employee:");
         String name = this.scanner.nextLine();
-        System.out.println("Enter the id of employee:");
-        int id = Integer.valueOf(scanner.nextLine());
+        while (true) {
+            System.out.println("Enter the id of employee:");
+            id = Integer.valueOf(scanner.nextLine());
+            if (id > 0) {
+                break;
+            }
+            System.out.println(" ");
+            System.out.println("id can never be negative\n Try Again!");
+        }
 
         System.out.println("Enter the department of employee:");
         String department = this.scanner.nextLine();
         while (true) {
-            System.out.println("Enter the number of hours" + name + " worked:");
+            System.out.println("Enter the number of hours " + name +
+                               " worked:");
             hours = Integer.valueOf(this.scanner.nextLine());
             if (hours >= 0 && hours <= 24) {
                 break;
@@ -165,9 +185,12 @@ public class UserInterface {
         this.management.displayDetailsById(id);
     }
     private int gettingIdOfUser() {
-        System.out.println("");
+
         System.out.println("Enter the id of employee to remove:");
         int id = Integer.valueOf(scanner.nextLine());
         return id;
+    }
+    private void calculateSalary() {
+        this.management.calculateSalary(gettingIdOfUser());
     }
 }

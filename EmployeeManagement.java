@@ -35,4 +35,19 @@ public class EmployeeManagement {
         }
         System.out.println(this.employeeIdTOEmployeeMap.get(id));
     }
+    public void calculateSalary(int employeeId) {
+        if (!this.employeeIdTOEmployeeMap.containsKey(employeeId)) {
+            System.out.println(
+                "The given id cannot be found in employee list.");
+            return;
+        }
+        System.out.println(" ");
+        System.out.println(
+            "The salary of employee " +
+            this.employeeIdTOEmployeeMap.get(employeeId).getName() +
+            "with id " + this.employeeIdTOEmployeeMap.get(employeeId).getId() +
+            " is $" +
+            this.employeeIdTOEmployeeMap.get(employeeId).calculateSalary() +
+            ".");
+    }
 }
